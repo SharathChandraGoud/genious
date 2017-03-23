@@ -1,0 +1,83 @@
+[{
+  "kpi": {
+    "kpi_name": "MARCH 21 KPI FROM API 1021",
+    "kpi_description": "", 
+    "schedule": {          
+      "startdate": "2016-03-21 12:47:57",
+      "enddate": "2016-05-21 13:10:57",
+    "uom":""
+    },
+    "rule_details": {
+      "rule": [
+        {
+          "rulename": "New MArch 16",          
+          "expression": {
+            "ifcondition": {
+              "logical_operator": "or",
+              "conditions": {
+                "measure": [
+                  {
+                    "expression": "{$source.HeartBeat.identities$}", 
+                    "operator": "contains",
+                    "value1": "74107332311101" 
+                    
+                  } 
+                  
+                ]
+              },
+                             "geo_logicaloperator": "All", 
+                                                                "geofence": [
+                                    {                   
+                                                                   "location_type":"radius",                 
+                    "operator": "<",            
+                          "latitude":"",
+                          "longitude":"",
+                   "value1": "200"
+                            }
+                                                    ]
+              
+                                                  
+            }
+          }
+        }
+      ]
+    }
+  },
+  "alert": {    
+     "time_period": {
+        "type": "static",
+       "startdate": "2016-03-21 12:47:57",
+        "enddate": "2016-03-21 13:05:57",
+        "uom": ""
+      },
+      "operator": "And",
+      "count": 2    
+  },
+  "action": [
+    {
+      "action_name": "MARCH 16 KPI FROM API 28",
+      "action_description": "red 12",
+      "url": "http://192.168.2.219:5800/flodata/416d55c8-8a4c-4e0f-a1f6-047401eb09a6/json",
+      "parameters": {        
+      },
+      "headers": {
+        },
+        "body": {
+          "request" : {
+                                  "user_id" : "35655",
+                                  "imsi" : 2321333
+                                }
+        },
+        "method_type": "post",
+                                "authentication_type":"authenticated"
+ }
+      
+  ]  
+  
+}]
+
+Regards,
+Abhishek Jain
+Test Lead
+ 
+
